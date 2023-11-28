@@ -6,32 +6,41 @@ export default db.define("produto", {
     type: Sequelize.INTEGER.UNSIGNED,
     primaryKey: true,
     autoIncrement: true,
-    allowNull: false,
+    allowNull: true,
   },
-  nome: {
+  produto: {
     type: Sequelize.STRING,
-    allowNull: false,
-  },
-  tipo: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  valor: {
-    type: Sequelize.DOUBLE,
     allowNull: false,
   },
   descricao: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  valor: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  quantidade: {
-    type: Sequelize.INTEGER,
+  descricao_produto: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  informacoes_tecnicas: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  eh_promocao: {
+    type: Sequelize.BOOLEAN,
     allowNull: false,
   },
   foto: {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  },
+  tipo:{
     type: Sequelize.STRING,
     allowNull: false,
   }
+  
 },
 {
   timestamps: false,

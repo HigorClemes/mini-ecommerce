@@ -20,12 +20,14 @@ function findOne(req, res) {
 function addProduto(req, res) {
   try{
     ProdutoModel.create({
-    nome: req.body.nome,
-    tipo: req.body.tipo,
-    valor: req.body.valor,
+    produto: req.body.produto,
     descricao: req.body.descricao,
-    quantidade: req.body.quantidade,
-    foto: req.body.foto
+    valor: req.body.valor,
+    descricao_produto: req.body.descricao_produto,
+    informacoes_tecnicas: req.body.informacoes_tecnicas,
+    eh_promocao: req.body.eh_promocao,
+    foto: req.body.foto,
+    tipo: req.body.tipo
    })
 } catch(error) {
   res.status(500).json({ error: 'Erro ao adicionar o produto.'});

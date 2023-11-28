@@ -16,20 +16,24 @@ export default db.define("usuario", {
     type: Sequelize.DATE,
     allowNull: false,
   },
-  endereco_id: {
-    type: Sequelize.INTEGER,
+  cpf: {
+    type: Sequelize.STRING,
     allowNull: false,
   },
-  codigo: {
+  email: {
     type: Sequelize.STRING,
     allowNull: true,
   },
-  tipo: {
-    type: Sequelize.INTEGER,
+  endereco: {
+    type: Sequelize.TEXT,
     allowNull: false,
   },
+  complemento: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
   senha: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   }
 },

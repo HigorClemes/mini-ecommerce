@@ -2,6 +2,7 @@ import express from "express";
 import routes from "./routes.js";
 import db from "./src/db.js";
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.json());
+app.use(bodyParser.json({ limit: 10000 }));
+app.use(bodyParser.urlencoded({ limit: 10000, extended: true }));
 app.use(routes);  
 app.use(cors({
   origin: '*',
